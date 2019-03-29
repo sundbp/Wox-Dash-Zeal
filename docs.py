@@ -27,7 +27,7 @@ def searchdocs(db, query):
         c = cur.execute(sql, ('%'+query+'%',))
         res = c.fetchall()
         if len(res) > 0:
-            pl = db.split(os.path.sep)[4].split('.')[0]
+            pl = db.split(os.path.sep)[-4].split('.')[0]
             img = os.path.join(dbpath, db.split(
                 os.path.sep)[4], 'icon@2x.png')
             for r in res:
